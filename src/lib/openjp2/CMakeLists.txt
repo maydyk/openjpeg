@@ -96,6 +96,7 @@ elseif(BUILD_SHARED_LIBS AND BUILD_STATIC_LIBS)
   set_target_properties(openjp2_static PROPERTIES OUTPUT_NAME ${OPENJPEG_LIBRARY_NAME})
   list(APPEND INSTALL_LIBS openjp2_static)
   target_include_directories(openjp2_static PUBLIC $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${OPENJPEG_INSTALL_SUBDIR}>)
+  target_compile_options(openjp2_static PRIVATE ${OPENJP2_COMPILE_OPTIONS})
 endif()
 
 target_include_directories(${OPENJPEG_LIBRARY_NAME} PUBLIC $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${OPENJPEG_INSTALL_SUBDIR}>)
